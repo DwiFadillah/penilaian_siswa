@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Apr 2023 pada 10.25
+-- Waktu pembuatan: 09 Apr 2023 pada 11.10
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 8.1.6
 
@@ -92,6 +92,23 @@ CREATE TABLE `matpel` (
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `nilai`
+--
+
+CREATE TABLE `nilai` (
+  `kd_nilai` varchar(10) NOT NULL,
+  `nilai` varchar(15) NOT NULL,
+  `kd_matpel` varchar(10) NOT NULL,
+  `nama_matpel` varchar(50) NOT NULL,
+  `nis` varchar(10) NOT NULL,
+  `nama_siswa` varchar(50) NOT NULL,
+  `nip` varchar(10) NOT NULL,
+  `nama_guru` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `siswa`
 --
 
@@ -143,6 +160,12 @@ ALTER TABLE `kelas`
 --
 ALTER TABLE `matpel`
   ADD PRIMARY KEY (`kd_matpel`);
+
+--
+-- Indeks untuk tabel `nilai`
+--
+ALTER TABLE `nilai`
+  ADD PRIMARY KEY (`kd_nilai`);
 
 --
 -- Indeks untuk tabel `siswa`
